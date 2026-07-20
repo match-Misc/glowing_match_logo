@@ -1,0 +1,4 @@
+float32 brightness_pct
+---
+bool success
+string message

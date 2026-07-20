@@ -1,0 +1,5 @@
+string letter
+uint8 letter_mode
+---
+bool success
+string message

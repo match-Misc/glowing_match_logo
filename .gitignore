@@ -1,0 +1,136 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+.env
+venv.bak/
+env.bak/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Spyder IDE
+.spyproject/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# pyenv
+.python-version
+
+# pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Pyre / type checker
+.pyre/
+
+# mypy
+.mypy_cache/
+
+# Arduino / ESP32 build artifacts
+arduino_glowing_match_logo/*.ino.hex
+arduino_glowing_match_logo/*.ino.bin
+arduino_glowing_match_logo/*.elf
+arduino_glowing_match_logo/build/
+arduino_glowing_match_logo/.vscode/
+arduino_glowing_match_logo/.pio/
+
+# CAD files - keep source files but ignore temp/work files
+CAD/**/*.bak
+CAD/**/*.tmp
+CAD/**/.*.lock
+
+# PCB files - keep designs but ignore backups
+PCB/**/*.bak
+PCB/**/*.~*
+
+# Log files
+*.log
+logs/
+
+# OS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+ehthumbs.db
+ehthumbs_vista.db
+.Trashes
+.Trash-*
+$RECYCLE.BIN/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.bak
+*.backup
+
+# Video files (large media files not suitable for git)
+video/*
+!video/.gitkeep
