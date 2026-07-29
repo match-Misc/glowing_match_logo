@@ -16,7 +16,8 @@
 // ==================================================
 // BLE (BLUETOOTH LOW ENERGY) CONFIGURATION
 // ==================================================
-#define BT_NAME           "GlowingMatch"  // Device name displayed in BLE scanner
+//#define BT_NAME           "GlowingMatch"  // Device name displayed in BLE scanner
+#define BT_NAME           "AngelinasGlowingMatch"  // Device name displayed in BLE scanner
 
 // ==================================================
 // LED LAYOUT - Define LED indices for each letter

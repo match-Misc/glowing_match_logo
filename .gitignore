@@ -131,6 +131,3 @@ $RECYCLE.BIN/
 *.bak
 *.backup
 
-# Video files (large media files not suitable for git)
-video/*
-!video/.gitkeep

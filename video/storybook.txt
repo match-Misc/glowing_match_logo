@@ -1,0 +1,84 @@
+Audio generated with
+
+https://finevoice.ai/voicelibrary/epic
+
+We set ourself an abigious goal...
+to increase performance at match!
+
+We set ourselves an ambitious goal...[long pause] [emphasis] to increase performance [pause] at match.
+
+But how could we possibly achive this?
+
+But how [pause]  could we possibly achieve this?
+
+To answer this question, we needed to dive deep into the the fundamental principles of quantum physics.
+(Tafelanschrieb (meme aus big bang theory), überlegen vor der Tafel).
+
+To answer this question, [pause] we needed to dive deep into the fundamental principles [pause] of quantum mechanics.[emphasis] 
+
+Using computer-aided design and a series of advanced simulations, we developed a first theoretical prototype.
+(Aufnahmen aus EasyEDA, sodass man das PCB nicht erkennt)
+
+Using computer-aided design [pause] and a series of advanced simulations [long pause], we developed a first theoretical prototype. [emphasis] 
+
+However, manufacturing this completly new piece of high-tech technology will not be a trivial task.
+(Aufnahmen wie ich mir einen Kittel und die Schuhe anziehe, vllt. auch noch die match-Mütze?)
+
+However [pause] , manufacturing this completely new piece of high-tech technology [long pause]  will not [emphasis] be a trivial task. 
+
+For manufacting of this novel technology, we needed to dail in the process parameters with a near-extreme level of precision.
+(Bild wie ich etwas von der Lotpaste draufrakel)
+
+   
+Through ultra-high-precision micro-positioning procedures, each component has to be aligned and positioned within extremely tight tolerances.
+(Bild wie ich unter dem Mikroskop ein paar Komponenten plaziere mit den Pinzetten)
+
+Through [emphasis] ultra-high-precision [pause]  micro-positioning procedures [long pause] , each component [pause] has to be aligned and positioned [long pause]  within [emphasis] extremely tight tolerances.
+
+Nearly gas posioning us to death, we baked the assembly into its final state.
+(Shot wie ich ein PCB auf die Heizplatte lege)
+
+Nearly gas poisoning us to death, [long pause] we baked the assembly [pause]  [emphasis] into its final state.
+
+And after decades of research, we could finally answer our initial question...
+(Shot wie ich das finale PCB aus der Montageanlage nehme und das erste mal einschalte).
+
+And after decades of research, [long pause] we could finally answer [long pause] our initial question...
+
+
+!We need more RGB!
+
+[emphasis] We [emphasis] need [long pause][emphasis]  more [long pause][emphasis]  RGB
+
+Introducing...
+[emphasis] Introducing [emphasis] 
+
+the Glowing MATCH Logo.
+
+Ein paar Aufnahmen vom dem PCB.
+
+Current features:
+- 49 LEDs - individually addressable
+- Wired (serial) and wireless (bluetooth) connections (Python API)
+- Control via GUI (Python)
+- ROS2 support
+- min. thickness 8mm
+- currently 3 different case desigs available
+
+Speed up your research projects NOW!
+
+Find it on Github!
+
+
+Shotlist:
+1. Gang - 5 
+2. 
+3. Tafelanschrieb - 6
+4. EasyEDA - 7
+5. Kittel - 7
+6. Lotpaste - 8
+7. Mikroskop - 9
+8. Heizplatte - 5,5
+9. Montageanlage - 5
+
+
