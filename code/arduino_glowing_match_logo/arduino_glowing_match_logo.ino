@@ -10,6 +10,9 @@
 #include "PersistentState.h"
 
 Adafruit_NeoPixel strip(NUM_LEDS, LED_PIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel ring(RING_NUM_LEDS, RING_PIN, NEO_GRB + NEO_KHZ800);
+// Unscaled animation buffer lets each physical output have its own cap.
+Adafruit_NeoPixel animationFrame(NUM_LEDS, -1, NEO_GRB + NEO_KHZ800);
 
 // --------------------------------------------------
 // Shared State Manager
@@ -121,6 +124,37 @@ void setPerLetterDemo() {
   letters[4].setEffect(&solidGreen);
 }
 
+// Average contiguous sections of the rendered word onto each half. Using
+// every source pixel preserves narrow chase heads and random sparkles.
+void showSynchronizedRing(Adafruit_NeoPixel &source = strip) {
+  ring.setBrightness((stateManager.getBrightnessPercent() * RING_MAX_BRIGHTNESS) / 100);
+  ring.clear();
+  if (buttonHandler.isLedsEnabled()) {
+    const uint16_t total = pcbWord.getCombinedCount();
+    for (uint16_t halfPixel = 0; halfPixel < RING_HALF_LEDS; ++halfPixel) {
+      uint32_t red = 0, green = 0, blue = 0;
+      uint16_t samples = 0, position = 0;
+      for (uint8_t l = 0; l < pcbWord.getLetterCount(); ++l) {
+        Letter &letter = pcbWord.getLetter(l);
+        for (uint16_t j = 0; j < letter.getCount(); ++j, ++position) {
+          if (total == 0 || (uint32_t)position * RING_HALF_LEDS / total != halfPixel) continue;
+          uint16_t index = letter.getIndices()[j];
+          if (index >= source.numPixels()) continue;
+          uint32_t pixel = source.getPixelColor(index);
+          green += (pixel >> 8) & 255;
+          red += (pixel >> 16) & 255;
+          blue += pixel & 255;
+          ++samples;
+        }
+      }
+      uint32_t color = samples ? ring.Color(red / samples, green / samples, blue / samples) : 0;
+      ring.setPixelColor(RING_LEFT_LEDS[halfPixel], color);
+      ring.setPixelColor(RING_RIGHT_LEDS[halfPixel], color);
+    }
+  }
+  ring.show();
+}
+
 void setup() {
   Serial.begin(115200);
 
@@ -128,6 +162,9 @@ void setup() {
 
   strip.begin();
   strip.show();
+  ring.begin();
+  ring.clear();
+  ring.show();
 
   setPerLetterDemo();
 
@@ -161,19 +198,25 @@ void loop() {
   buttonHandler.handle();
 
   if (!buttonHandler.isLedsEnabled()) {
+    showSynchronizedRing();
     delay(20);
     return;
   }
 
   // Skip effect application if BLE connection blink is in progress
   if (bleHandler.isBlinking()) {
+    showSynchronizedRing();
     delay(20);
     return;
   }
 
-  clearAll();
-  pcbWord.apply(strip, now);
+  animationFrame.clear();
+  pcbWord.apply(animationFrame, now);
+  for (uint16_t i = 0; i < NUM_LEDS; ++i) {
+    strip.setPixelColor(i, animationFrame.getPixelColor(i));
+  }
   strip.show();
+  showSynchronizedRing(animationFrame);
 
   delay(20);
 }

@@ -6,18 +6,30 @@
 // ==================================================
 #define LED_PIN           3      // Pin connected to NeoPixel data line
 #define NUM_LEDS          60     // Total number of LEDs in the strip
+#define RING_PIN          2      // Additional WS2812 ring data input (GPIO)
+#define RING_NUM_LEDS     16
+#define RING_HALF_LEDS    8
+
+// Viewed from the front: each list runs from bottom to top.
+// Rotate/reorder these indices to match the physical ring orientation.
+const uint16_t RING_LEFT_LEDS[RING_HALF_LEDS] = {0, 1, 2, 3, 4, 5, 6, 7};
+const uint16_t RING_RIGHT_LEDS[RING_HALF_LEDS] = {15, 14, 13, 12, 11, 10, 9, 8};
 
 // ==================================================
 // BRIGHTNESS CONFIGURATION
 // ==================================================
 #define BRIGHTNESS        50     // Initial brightness in percent (0-100)
-#define MAX_BRIGHTNESS    127    // Maximum brightness cap
+#define MAX_BRIGHTNESS    15    // Maximum brightness cap
+#define RING_MAX_BRIGHTNESS 255  // Independent ring cap (0-255); 0 disables ring
+
+static_assert(RING_MAX_BRIGHTNESS >= 0 && RING_MAX_BRIGHTNESS <= 255,
+              "RING_MAX_BRIGHTNESS must be between 0 and 255");
 
 // ==================================================
 // BLE (BLUETOOTH LOW ENERGY) CONFIGURATION
 // ==================================================
 //#define BT_NAME           "GlowingMatch"  // Device name displayed in BLE scanner
-#define BT_NAME           "AngelinasGlowingMatch"  // Device name displayed in BLE scanner
+#define BT_NAME           "RolfsGlowingMatch"  // Device name displayed in BLE scanner
 
 // ==================================================
 // LED LAYOUT - Define LED indices for each letter
